@@ -1,0 +1,39 @@
+<header class="header">
+    <h1>
+      Deep Space Agency
+    </h1>
+    <button id="butInstall" aria-label="Install" hidden></button>
+    <button id="butRefresh" aria-label="Refresh"></button>
+</header>
+
+  <main class="main">
+
+    <button id="butAdd" class="fab" aria-label="Add">
+      <span class="icon add"></span>
+    </button>
+
+    <div id="about" class="weather-card">
+      <b>Welcome to Deep Space</b><br>
+    </div>
+    <div>
+      <!--Main Content -->
+    </div>
+  </main>
+  <div>
+    <div>
+      <!-- Child Content-->
+    </div>
+  </div>
+
+
+  <script>
+    // CODELAB: Register service worker.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/content/service-worker.js')
+            .then((reg) => {
+              console.log('Service worker registered.', reg);
+            });
+      });
+    }
+  </script>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/pwa" mode="merge"/>
+    <filter root="/content/pwa" mode="merge"/>
+    <filter root="/content/dam/pwa" mode="merge"/>
+</workspaceFilter>
