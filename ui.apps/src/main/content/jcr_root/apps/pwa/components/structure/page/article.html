@@ -1,0 +1,89 @@
+
+<style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            
+            background-image: url('/etc/clientlibs/pwa/images/space-iphone-wallpaper-2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main-content-flex {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px; 
+            display: flex; 
+            flex-direction: row; 
+            flex-wrap: wrap;
+            align-items: baseline;
+            color: white;
+            font-family: "sans-serif";
+        }
+        .flex-item {
+            width: 45%;
+            margin: 0 auto;
+        }
+        .flex-item img {
+            width: 100%;
+        }
+
+        h1 {
+        margin: 0 auto;
+        color: white;
+        }
+
+    </style>
+<header class="header">
+    <h1>
+      Deep Space Agency
+    </h1>
+</header>
+
+  <main class="main">
+
+    <div id="about" class="weather-card">
+      <b>Welcome to Deep Space</b><br>
+    </div>
+    <div>
+     <!-- Main Content-->
+	<div class="main-content-flex" style="">
+        <div class="flex-item" style="">
+            <div class="image">
+                <a href="#">
+                    <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="share-icons">
+            <a href="href="https://plus.google.com/share?url=https%3A%2F%2Fwww.spacex.com%2Fnews%2F2019%2F11%2F11%2Fstarlink-mission" ">Tweet Me!</a>
+        </div>
+        <div class="flex-item">
+            <p>
+                On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
+            </p>
+            <p>
+                Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
+            </p>
+        </div>
+        
+    </div>
+    </div>
+  </main>
+  <div>
+    <div>
+      <!-- Child Content-->
+    </div>
+  </div>
+
+
+  <script>
+    // CODELAB: Register service worker.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/content/service-worker.js')
+            .then((reg) => {
+              console.log('Service worker registered.', reg);
+            });
+      });
+    }
+  </script>

@@ -1,22 +1,160 @@
+<style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+
+            background-image: url('/etc/clientlibs/pwa/images/space-iphone-wallpaper-2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        button {
+        	color: white;
+        }
+        .main-content-flex {
+            background: rgba(128, 128, 128, 0.25);
+            padding: 10px; 
+            display: flex; 
+            flex-direction: row; 
+            flex-wrap: wrap;
+            align-items: baseline;
+            color: white;
+            font-family: "sans-serif";
+            margin: 10px 45px;
+        }
+        .flex-item {
+            width: 45%;
+            margin: 0 auto;
+        }
+        .flex-item img {
+            width: 100%;
+        }
+
+        h1 {
+        margin: 0 auto;
+        color: white;
+        }
+
+        .video-container {
+        	width: 94%;
+            margin: 0 auto;
+         }
+        video {
+        	width:100%;
+        	margin: 0 auto;
+		}
+        button#notification-pwa {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    margin-right: 50px;
+}
+    	@media only screen 
+    		and (min-device-width : 414px) 
+    		and (max-device-width : 736px){
+                .flex-item {
+                    width : 90%; 
+                }
+                .main-content-flex {
+                margin: 10px;
+             }
+             button#notification-pwa {
+             	right: 0;
+             	margin-right: 10px;
+             }
+             
+         }
+
+
+    </style>
 <header class="header">
-    <h1>
+    <h1 style="align: center;">
       Deep Space Agency
     </h1>
-    <button id="butInstall" aria-label="Install" hidden></button>
-    <button id="butRefresh" aria-label="Refresh"></button>
+     <button id="butInstall" aria-label="Install" hidden>Install</button>
+    <button id="butRefresh" aria-label="Refresh">Refresh</button>
+    <button id="notification-pwa" aria-label="Refresh">Notifications</button>
+    
 </header>
+<div class="media-desp">
+        <div class ="video-container">
+                <video autoplay muted loop>
+                  <source src="/etc/clientlibs/pwa/images/deep-space.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+            </div>
+</div>
 
   <main class="main">
-
     <button id="butAdd" class="fab" aria-label="Add">
       <span class="icon add"></span>
     </button>
 
-    <div id="about" class="weather-card">
-      <b>Welcome to Deep Space</b><br>
-    </div>
     <div>
-      <!--Main Content -->
+     <!-- Main Content-->
+	<div class="main-content-flex" style="">
+        <div class="flex-item" style="">
+            <div class="image">
+                <a href="#">
+                    <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="flex-item">
+            <p>
+                On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
+            </p>
+            <p>
+                Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
+            </p>
+        </div>
+        <div class="flex-item" style="">
+            <div class="image">
+                    <a href="#">
+                            <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                        </a>
+            </div>
+        </div>
+        <div class="flex-item">
+            <p>
+                On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
+            </p>
+            <p>
+                Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
+            </p>
+        </div>
+        <div class="flex-item" style="">
+                <div class="image">
+                        <a href="#">
+                                <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                            </a>
+                </div>
+            </div>
+            <div class="flex-item">
+                <p>
+                    On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
+                </p>
+                <p>
+                    Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
+                </p>
+            </div>
+            <div class="flex-item" style="">
+                    <div class="image">
+                            <a href="#">
+                                    <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                                </a>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <p>
+                        On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
+                    </p>
+                    <p>
+                        Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
+                    </p>
+                </div>
+    </div>
     </div>
   </main>
   <div>
@@ -36,4 +174,19 @@
             });
       });
     }
+
+    //custom code for notifications
+    Notification.requestPermission(function(status) {
+    	console.log('Notification permission status:', status);
+	});
+
+ 
+
+	function displayNotification() {
+  		if (Notification.permission == 'granted') {
+    		navigator.serviceWorker.getRegistration().then(function(reg) {
+      			reg.showNotification('Hello world!');
+    		});
+  		}
+	}
   </script>
