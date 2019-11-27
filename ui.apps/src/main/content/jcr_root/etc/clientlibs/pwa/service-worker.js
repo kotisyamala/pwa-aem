@@ -50,6 +50,8 @@ const FILES_TO_CACHE = [
   '/etc/clientlibs/pwa/images/content-image.jpg',
   '/etc/clientlibs/pwa/images/space-iphone-wallpaper-2.jpg',
   '/etc/clientlibs/pwa/images/deep-space.mp4',
+  '/etc/clientlibs/pwa/images/rocket-2.jpg',
+   '/etc/clientlibs/pwa/images/rocket-3.jpg',
 ];
 self.addEventListener('install', (evt) => {
   console.log('[ServiceWorker] Install');

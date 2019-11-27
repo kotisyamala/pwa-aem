@@ -1,134 +1,148 @@
 <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-
-            background-image: url('/etc/clientlibs/pwa/images/space-iphone-wallpaper-2.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-
-        }
-        button {
-        	color: white;
-        }
-        .main-content-flex {
-            background: rgba(128, 128, 128, 0.25);
-            padding: 10px; 
-            display: flex; 
-            flex-direction: row; 
-            flex-wrap: wrap;
-            align-items: baseline;
-            color: white;
-            font-family: "sans-serif";
-            margin: 10px 45px;
-        }
-        .flex-item {
-            width: 45%;
-            margin: 0 auto;
-        }
-        .flex-item img {
-            width: 100%;
-        }
-
-        h1 {
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-image: url('/etc/clientlibs/pwa/images/space-iphone-wallpaper-2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    button {
+        color: white;
+    }
+    
+    .main-content-flex {
+        background: rgba(128, 128, 128, 0.25);
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        color: white;
+        font-family: "sans-serif";
+        margin: 10px 45px;
+    }
+    
+    .flex-item {
+        width: 45%;
+        margin: 0 auto;
+    }
+    
+    .flex-item img {
+        width: 100%;
+    }
+    header {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    h1 {
+    	font-family: billabong, 'billabongregular';
         margin: 0 auto;
         color: white;
+        font-weight:100;
+  		font-size : 3rem;
+         text-shadow : 0px 4px 0 rgba(18, 86, 136, 0.11)
+    }
+    
+    .video-container {
+        width: 94%;
+        margin: 0 auto;
+    }
+    
+    video {
+        width: 100%;
+        margin: 0 auto;
+    }
+    p {
+    	text-align: justify;
+	}
+
+    @font-face {
+    font-family: 'billabongregular';
+    src: url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot');
+    src: url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff') format('woff'),
+         url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf') format('truetype'),
+         url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+    button#notification-pwa {
+        /* position: absolute;
+        right: 0;
+        top: 15px;
+        margin-right: 50px; */
+        color:black;
+    }
+
+    /* .add-to-home {
+            color: darkblue;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: burlywood;
+            line-height: 2;
+            font-family: sans-serif;
+            border-radius: 2px;
+     }
+
+    	.add-to-home .action-close-text,
+        .add-to-home .action-close-button {
+            margin: 20px;
         }
 
-        .video-container {
-        	width: 94%;
-            margin: 0 auto;
-         }
-        video {
-        	width:100%;
-        	margin: 0 auto;
-		}
+        .add-to-home .action-close-button {
+            float: right;
+        } */
+
+    @media only screen and (max-device-width: 740px) {
+        .flex-item {
+            width: 90%;
+        }
+        .main-content-flex {
+            margin: 10px;
+        }
         button#notification-pwa {
-    position: absolute;
-    right: 0;
-    top: 15px;
-    margin-right: 50px;
-}
-    	@media only screen 
-    		and (min-device-width : 414px) 
-    		and (max-device-width : 736px){
-                .flex-item {
-                    width : 90%; 
-                }
-                .main-content-flex {
-                margin: 10px;
-             }
-             button#notification-pwa {
-             	right: 0;
-             	margin-right: 10px;
-             }
-             
-         }
-
-
-    </style>
+            right: 0;
+            margin-right: 10px;
+        }
+    }
+</style>
 <header class="header">
-    <h1 style="align: center;">
+    <h1 style="text-align: center;">
       Deep Space Agency
     </h1>
-     <button id="butInstall" aria-label="Install" hidden>Install</button>
-    <button id="butRefresh" aria-label="Refresh">Refresh</button>
-    <button id="notification-pwa" aria-label="Refresh">Notifications</button>
-    
+    <button id="butInstall" aria-label="Install" hidden>Install</button>
+    <!-- <button id="butRefresh" aria-label="Refresh">Refresh</button> -->
+    <button id="notification-pwa" aria-label="Refresh" onclick="checkNotification()">Notifications</button>
+
 </header>
 <div class="media-desp">
-        <div class ="video-container">
-                <video autoplay muted loop>
-                  <source src="/etc/clientlibs/pwa/images/deep-space.mp4" type="video/mp4">
-                  Your browser does not support HTML5 video.
-                </video>
-            </div>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="/etc/clientlibs/pwa/images/deep-space.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+        </video>
+    </div>
 </div>
 
-  <main class="main">
+<main class="main">
     <button id="butAdd" class="fab" aria-label="Add">
-      <span class="icon add"></span>
+        <span class="icon add"></span>
     </button>
 
     <div>
-     <!-- Main Content-->
-	<div class="main-content-flex" style="">
-        <div class="flex-item" style="">
-            <div class="image">
-                <a href="#">
-                    <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="flex-item">
-            <p>
-                On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
-            </p>
-            <p>
-                Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
-            </p>
-        </div>
-        <div class="flex-item" style="">
-            <div class="image">
-                    <a href="#">
-                            <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
-                        </a>
-            </div>
-        </div>
-        <div class="flex-item">
-            <p>
-                On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
-            </p>
-            <p>
-                Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
-            </p>
-        </div>
-        <div class="flex-item" style="">
+        <!-- Main Content-->
+        <div class="main-content-flex" style="">
+            <div class="flex-item" style="">
                 <div class="image">
-                        <a href="#">
-                                <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
-                            </a>
+                    <a href="#">
+                        <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                    </a>
                 </div>
             </div>
             <div class="flex-item">
@@ -140,53 +154,81 @@
                 </p>
             </div>
             <div class="flex-item" style="">
-                    <div class="image">
-                            <a href="#">
-                                    <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
-                                </a>
-                    </div>
+                <div class="image">
+                    <a href="#">
+                        <img src="/etc/clientlibs/pwa/images/rocket-2.jpg" alt="">
+                    </a>
                 </div>
-                <div class="flex-item">
-                    <p>
-                        On Monday, November 11 at 9:56 a.m. EST, 14:56 UTC, SpaceX launched 60 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Air Force Station, Florida.
-                    </p>
-                    <p>
-                        Falcon 9’s first stage supported the Iridium-7, SAOCOM-1A, and Nusantara Satu missions, and the fairing was previously flown on Falcon Heavy’s Arabsat-6A mission earlier this year. Following stage separation, SpaceX landed Falcon 9’s first stage on the “Of Course I Still Love You” droneship, which was stationed in the Atlantic Ocean. You can watch a replay of launch below and learn more about the mission in our <strong><a href="http://www.spacex.com/sites/spacex/files/starlink_press_kit_nov2019.pdf" target="_blank">press kit.</a></strong>
-                    </p>
+            </div>
+            <div class="flex-item">
+                <p>
+                	SpaceX's Starship and Super Heavy launch vehicle is a fully, rapidly reusable transportation system designed to carry both crew and cargo to Earth orbit, the Moon, Mars, and anywhere else in the solar system. On Saturday, September 28 at our launch facility in Cameron County, Texas, SpaceX Chief Engineer and CEO Elon Musk provided an update on the design and development of Starship. You can watch a replay of update below and learn more about the vehicle at spacex.com/starship.    
+                </p>
+            </div>
+            <div class="flex-item" style="">
+                <div class="image">
+                    <a href="#">
+                        <img src="/etc/clientlibs/pwa/images/rocket-3.jpg" alt="">
+                    </a>
                 </div>
+            </div>
+            <div class="flex-item">
+                <p>
+					Packed with about 3,300 pounds of cargo and science, SpaceX’s Dragon spacecraft departed the International Space Station on Tuesday, August 27. A parachute-assisted splashdown in the Pacific Ocean occurred that afternoon just west of Baja, California. A recovery team then secured Dragon on a boat for the return trip to the Port of Los Angeles, wrapping up SpaceX’s 18th resupply mission to the space station.
+                </p>
+            </div>
+            <div class="flex-item" style="">
+                <div class="image">
+                    <a href="#">
+                        <img src="/etc/clientlibs/pwa/images/content-image.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="flex-item">
+                <p>
+					In September 2016, CEO Elon Musk unveiled the Interplanetary Transport System, a privately funded initiative to develop spaceflight technology for use in crewed interplanetary spaceflight. In 2017, Musk unveiled an updated configuration of the system, named "Starship", which is planned to be fully reusable and will be the largest rocket ever on its debut, currently scheduled for the early 2020s
+                </p>
+            </div>
+        </div>
     </div>
-    </div>
-  </main>
-  <div>
+</main>
+<div>
     <div>
-      <!-- Child Content-->
+        <!-- Child Content-->
     </div>
-  </div>
+</div>
+<!-- <footer class='add-to-home'>
+        <button class="action-close-text">Add to homescreen</button>
+        <button class="action-close-button">x</button>
+</footer> -->
 
-
-  <script>
+<script>
     // CODELAB: Register service worker.
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/content/service-worker.js')
-            .then((reg) => {
-              console.log('Service worker registered.', reg);
-            });
-      });
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/content/service-worker.js')
+                .then((reg) => {
+                    console.log('Service worker registered.', reg);
+                });
+        });
     }
 
     //custom code for notifications
-    Notification.requestPermission(function(status) {
-    	console.log('Notification permission status:', status);
-	});
 
- 
+    function checkNotification() {
+        Notification.requestPermission(function(status) {
+        console.log('Notification permission status:', status);
+        this.displayNotification();
+    });
 
-	function displayNotification() {
-  		if (Notification.permission == 'granted') {
-    		navigator.serviceWorker.getRegistration().then(function(reg) {
-      			reg.showNotification('Hello world!');
-    		});
-  		}
-	}
-  </script>
+
+    }
+
+    function displayNotification() {
+        if (Notification.permission == 'granted') {
+            navigator.serviceWorker.getRegistration().then(function(reg) {
+                reg.showNotification('Valar Morghulis!');
+            });
+        }
+    }
+</script>
